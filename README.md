@@ -1,5 +1,5 @@
 <h1 align="center"> Nextjs Template </h1>
-<h3 align="center"> With SASS and Typescript </h3>
+<h4 align="center"> With SASS and Typescript </h4>
 
 ## Usage
 #### To use this template you have to install  <a href="https://github.com/Rich-Harris/degit"> degit <a/>.
