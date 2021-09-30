@@ -1,51 +1,19 @@
-import React from 'react'
-import Document, {
-  DocumentInitialProps,
-  DocumentContext,
-  Head,
-  Html,
-  Main,
-  NextScript
-} from 'next/document'
 
-export default class MyDocument extends Document {
-  static async getInitialProps(
-    ctx: DocumentContext
-  ): Promise<DocumentInitialProps> {
-    const originalRenderPage = ctx.renderPage
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-        })
-
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-          </>
-        )
-      }
-    } finally {
-    }
-  }
-
-  render(): JSX.Element {
-    return (
-      <Html lang="pt">
+export default class MyDocument extends Document{
+  render(){
+    return(
+      <Html>
         <Head>
-          <meta charSet="utf-8" />
-
-          <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-          />
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com"/>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet"/>
+          {/* <link rel="shotcut icon" href="/favicon.png" type="image/png"/> */}
         </Head>
         <body>
           <Main />
-          <NextScript />
+          <NextScript/>
         </body>
       </Html>
     )
